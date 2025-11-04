@@ -43,7 +43,5 @@ def main():
 
     print(f"Electric car ({electric_car.registration_number}) travelled: {electric_car.travelled_distance} km")
     print(f"Gasoline car ({gasoline_car.registration_number}) travelled: {gasoline_car.travelled_distance} km")
-
-
 if __name__ == "__main__":
     main()

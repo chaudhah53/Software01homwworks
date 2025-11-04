@@ -37,7 +37,5 @@ def main():
 
     print("\nBook Information:")
     compartment_no_6.print_information()
-
-
-if __name__ == "__main__":
+    if __name__ == "__main__":
     main()
