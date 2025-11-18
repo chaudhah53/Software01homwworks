@@ -14,6 +14,7 @@ def main():
         with urllib.request.urlopen(url) as response:
             data = json.loads(response.read())
 
+
         temp = data['main']['temp']
         desc = data['weather'][0]['description']
         name = data['name']

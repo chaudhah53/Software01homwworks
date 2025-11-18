@@ -4,8 +4,13 @@ import ssl
 
 
 def get_random_chuck_norris_joke():
+    """
+    Fetches a random Chuck Norris joke with enhanced error handling.
+    """
     try:
+
         context = ssl.create_default_context()
+
         url = "https://api.chucknorris.io/jokes/random"
 
         req = urllib.request.Request(
@@ -22,24 +27,20 @@ def get_random_chuck_norris_joke():
                 joke_data = json.loads(data)
                 return joke_data['value']
             else:
-                return f"Error: Received status code {response.status}"
+                return f"HTTP Error: {response.status}"
 
     except urllib.error.URLError as e:
-        return f"Network Error: {e.reason}"
+        return f"URL Error: {e.reason}"
     except json.JSONDecodeError as e:
-        return f"Data Error: Could not parse response"
+        return f"JSON Error: {e}"
     except Exception as e:
         return f"Unexpected error: {e}"
 
+
 def main():
-    print("=== Random Chuck Norris Joke ===")
-    print("Fetching a joke...")
-
+    print("=== Chuck Norris Joke ===")
     joke = get_random_chuck_norris_joke()
-
-    print("\n" + "=" * 50)
-    print(joke)
-    print("=" * 50)
+    print(f"\n{joke}\n")
 
 
 if __name__ == "__main__":
