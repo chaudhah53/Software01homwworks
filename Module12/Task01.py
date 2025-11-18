@@ -31,7 +31,6 @@ def get_random_chuck_norris_joke():
     except Exception as e:
         return f"Unexpected error: {e}"
 
-
 def main():
     print("=== Random Chuck Norris Joke ===")
     print("Fetching a joke...")
