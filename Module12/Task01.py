@@ -21,6 +21,7 @@ def get_random_chuck_norris_joke():
             }
         )
 
+
         with urllib.request.urlopen(req, context=context, timeout=10) as response:
             if response.status == 200:
                 data = response.read().decode('utf-8')

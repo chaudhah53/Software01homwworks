@@ -7,12 +7,14 @@ def main():
 
     city = input("Enter city name: ")
 
+
     try:
         # Simple direct approach
         url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
 
         with urllib.request.urlopen(url) as response:
             data = json.loads(response.read())
+
 
         temp = data['main']['temp']
         desc = data['weather'][0]['description']
